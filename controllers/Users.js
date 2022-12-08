@@ -151,10 +151,10 @@ export const Update = async(req, res,next) => {
     const extPassport = path.extname(filePassport.name);
     const extIzin = path.extname(fileIzin.name);
 
-    fileName = file.md5 + ext;
-    fileNameVisa = fileVisa.md5 + extVisa;
-    fileNamePassport = filePassport.md5 + extPassport;
-    fileNameIzin = fileIzin.md5 + extIzin;
+    fileName = file.md5 + req.user.name+ ext ;
+    fileNameVisa = fileVisa.md5 +req.user.name+ extVisa;
+    fileNamePassport = filePassport.md5 +req.user.name + extPassport;
+    fileNameIzin = fileIzin.md5 +req.user.name+ extIzin;
 
     const allowedType = ['.png','.jpg','.jpeg'];
 
